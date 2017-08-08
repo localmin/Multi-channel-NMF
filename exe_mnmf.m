@@ -4,7 +4,7 @@ addpath('./Frb');
 
 parameter_setting;
 
-X = make_obs-data( M, I, J, K );
+X = input_data( M, I, J, K );
 
 sd = rand *100;
 % Frb-ciriterion
