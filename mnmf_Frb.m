@@ -39,10 +39,10 @@ for lp=1:Itr
 
   for k=1:K
     
-    xhu = zeros( I, C );
-    xhl = zeros( I, C );
+    xhu = zeros( I, J );
+    xhl = zeros( I, J );
     for i=1:I
-      for j=1:R
+      for j=1:J
         vh = vec( H(:,:,i,k) );
         vx = vec( X(:,:,i,j)' );
         vxf = vec( Xf(:,:,i,j)' );
