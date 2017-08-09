@@ -12,7 +12,7 @@ for i=1:R
   end
 end
 
-X = prodHTV( H, T, V );
+X = make_fctrz( H, T, V );
 
 end
 
