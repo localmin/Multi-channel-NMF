@@ -29,7 +29,7 @@ V = V * coef;
 Xf = Xf * coef * coef;
 
 % Iteration by MU
-his = zeros( Itr, 2 );
+wrt = zeros( Itr, 2 );
 
 for lp=1:Itr
  % create new tmp variables
