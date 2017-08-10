@@ -7,4 +7,4 @@ J = 30;
 % basis vectors
 K = 4; 
 % numbers of iterations
-Iter = 300;
+itr = 300;
