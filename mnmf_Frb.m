@@ -46,8 +46,8 @@ for lp=1:Itr
         vh = vec( H(:,:,i,k) );
         vx = vec( X(:,:,i,j)' );
         vxf = vec( Xf(:,:,i,j)' );
-        xhu(i,j) = ( vx' * vb );
-        xhl(i,j) = ( vxf' * vb );
+        xhu(i,j) = ( vx' * vh );
+        xhl(i,j) = ( vxf' * vh );
       end
     end
     

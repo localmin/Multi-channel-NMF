@@ -20,8 +20,8 @@ end
 
 % Scale Fitting
 Xf = make_fctrz( H, T, V );
-upper = X(:)' * Xf(:);
-lower = Xf(:)' * Xf(:);
+up = X(:)' * Xf(:);
+low = Xf(:)' * Xf(:);
 coef = sqrt( up / low );
 T = T * coef;
 V = V * coef;
@@ -113,7 +113,7 @@ for lp=1:Itr
     end
   end
  
-  D = reshape( IS, R*C,1 );
+  D = reshape( IS, I*J,1 );
   % Extension IS
   wrt(lp,:) = [ exe_time norm(D,1) ];
 

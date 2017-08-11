@@ -14,7 +14,7 @@ randn( 'seed', sd );
 [wrt_i Hi, Ti, Vi] = mnmf_IS( X, K, itr );
  
 % make factorized models
-Xh_frb = mk_fctrz( Hf, Tf, Vf );
-Xh_is = mk_fctrz( Hi, Ti, Vi );
+Xf_frb = make_fctrz( Hf, Tf, Vf );
+Xf_is = make_fctrz( Hi, Ti, Vi );
 
 view_result;
