@@ -1,10 +1,10 @@
-function X = input_data( M, R, C, K )
+function X = input_data( M, I, J, K )
 
-H = zeros( M, M, R, K );
-T = abs(randn( R, K ));
-V = abs(randn( K, C ));
+H = zeros( M, M, I, K );
+T = abs(randn( I, K ));
+V = abs(randn( K, J ));
 
-for i=1:R
+for i=1:I
   for k=1:K
     temp = randn( M, M ); temp = temp * temp';
     temp = temp / trace(temp);
