@@ -1,7 +1,5 @@
 clear
 
-addpath('./Frb');
-
 parameter_setting;
 
 X = input_data( M, I, J, K );

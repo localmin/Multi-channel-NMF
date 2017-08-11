@@ -2,9 +2,9 @@
 % observations
 M = 2;
 % size of observation matrix
-I = 18;
-J = 30;
+I = 12;
+J = 20;
 % basis vectors
-K = 4; 
+K = 2; 
 % numbers of iterations
-itr = 300;
+itr = 100;
