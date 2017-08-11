@@ -5,11 +5,11 @@ tic;
 exe_time = 0;
 
 % Getting size
-[M,~,R,C] = size( X );
+[M,~,I,J] = size( X );
 
 % initialization
-T = abs(randn( R, K ));
-V = abs(randn( K, C ));
+T = abs(randn( I, K ));
+V = abs(randn( K, J ));
 H = zeros( M, M, I, K );
 Id = eye( M, M ) / M;
 
