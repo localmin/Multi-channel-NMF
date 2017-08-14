@@ -6,7 +6,8 @@ V = abs(randn( K, J ));
 
 for i=1:I
   for k=1:K
-    temp = randn( M, M ); temp = temp * temp';
+    temp = randn( M, M ); 
+    temp = temp * temp';% Meke non-negative definite Hermitian Matrix
     temp = temp / trace(temp);
     H(:,:,i,k) = temp;
   end
@@ -15,5 +16,3 @@ end
 X = make_fctrz( H, T, V );
 
 end
-
-
