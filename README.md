@@ -16,11 +16,11 @@ You should read the followinig article,
 
  ### Default Setting
   
- +* This default program execute a simulation by real number. 
- +
- +If you want to deal with real data, change 
- +codes, for example, "parameter_setting.m", "input_data.m" etc, for your use.
- +
+ * This default program execute a simulation by real number. 
+ 
+ If you want to deal with real data, change 
+ codes, for example, "parameter_setting.m", "input_data.m" etc, for your use.
+ 
   * Size of the observation matrix: 12 × 20
   
   * Channel number: 2
@@ -62,3 +62,9 @@ for ii=1:I
   end
 end
  ```
+
+ ## Caution
+
+ Please read  
+[Issue.](https://github.com/localmin/Multi-channel-NMF/issues)
+
