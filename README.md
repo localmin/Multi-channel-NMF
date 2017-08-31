@@ -6,7 +6,7 @@ Multi-channel Non-negative Matrix Factorization by multiplicative update on Octa
 
 You can use execute Multi-channel NMF easily on Octave(of course MATLAB).
 
-## Baccgroud of Multi-channel NMF
+## Backgroud of Multi-channel NMF
 
 You should read the followinig article,
 [https://pdfs.semanticscholar.org/783f/44598d5d9df7d534d00943959d9b34dbc302.pdf](https://pdfs.semanticscholar.org/783f/44598d5d9df7d534d00943959d9b34dbc302.pdf)
@@ -65,6 +65,4 @@ end
 
  ## Caution
 
- Please read  
-[Issue.](https://github.com/localmin/Multi-channel-NMF/issues)
-
+ Please read [Issue.](https://github.com/localmin/Multi-channel-NMF/issues)
