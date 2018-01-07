@@ -11,6 +11,8 @@ You can use execute Multi-channel NMF easily on Octave(of course MATLAB).
 You should read the followinig article,
 [https://pdfs.semanticscholar.org/783f/44598d5d9df7d534d00943959d9b34dbc302.pdf](https://pdfs.semanticscholar.org/783f/44598d5d9df7d534d00943959d9b34dbc302.pdf)
 
+(I'm not an author of Muliti-channel NMf.)
+
 ## Usage
 `./exc_mnmf.m`
 
@@ -32,7 +34,9 @@ You should read the followinig article,
  * Initial value setting method of update rules: random non-negative values for T & V, and identity matrix for H.
  
  You can change these default settings on "parameter_setting.m" like the following,
+
  
+
  ```
 % parameters
 % Number of channel
@@ -63,6 +67,11 @@ for ii=1:I
 end
  ```
 
+* Not implement the NMF basis clustering, top-down clustering using the latent variables Z and bottom-up clustering in the reference paper.
+
  ## Caution
 
  Please read [Issue.](https://github.com/localmin/Multi-channel-NMF/issues)
+
+
+ This code is provided without liability and warranty.
