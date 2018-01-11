@@ -11,7 +11,7 @@ You can use execute Multi-channel NMF easily on Octave(of course MATLAB).
 You should read the followinig article,
 [https://pdfs.semanticscholar.org/783f/44598d5d9df7d534d00943959d9b34dbc302.pdf](https://pdfs.semanticscholar.org/783f/44598d5d9df7d534d00943959d9b34dbc302.pdf)
 
-(I'm not an author of Muliti-channel NMf.)
+(I'm not an author of Muliti-channel NMF.)
 
 ## Usage
 `./exc_mnmf.m`
