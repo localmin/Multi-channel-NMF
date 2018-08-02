@@ -32,59 +32,65 @@ function [ wrt, H, T, V ] = mnmf_Frb( X, K, Itr )
     wrt = zeros( Itr, 2 );
     
     for lp=1:Itr
-     % create new tmp variables
+      % create new tmp variables
       tmpT = T;
       tmpV = V;
       tmpH = H; 
     
-      for k=1:K
-        
-        xhu = zeros( I, J );
-        xhl = zeros( I, J );
-        for i=1:I
-          for j=1:J
-            vh = vec( H(:,:,i,k) );
-            vx = vec( X(:,:,i,j)' );
-            vxf = vec( Xf(:,:,i,j)' );
-            xhu(i,j) = ( vx' * vh );
-            xhl(i,j) = ( vxf' * vh );
-          end
-        end
-        
-        % update T
-        up = xhu * V(k,:)' ;
-        low = xhl * V(k,:)' ;
-        nT(:,k) = T(:,k) .* (up ./ low);
-    
-        % update V
-        up = T(:,k)' * xhu;
-        low = T(:,k)' * xhl;
-        tmpxnV(k,:) = V(k,:) .* (up ./ low);
-    
-        % update H
-        for i=1:I
-          
-          A = zeros(M,M);
-          B = zeros(M,M); 
-          for j=1:J
-            tmp1 = V(k,j) * Xf(:,:,i,j);
-            A = A + tmp1;
-    
-            tmp2 = V(k,j) * X(:,:,i,j);
-            B = B + tmp2;
-          end
-          tmp3 = inv(A);
-         
-          tmp = H(:,:,i,k) * tmp3 * B;
-          tmp = ( tmp + tmp' ) / 2;
-          [P,L] = eig( tmp );
-          tmp = real( P * diag( max( diag(L), 0 ) ) * P' );
-          tmp = tmp / trace( tmp );
-          tmpH(:,:,i,k) = tmp;
-          
-        end
-       
+      vX = zeros(M,M,I,K);
+		  vXf = zeros(M,M,I,K);
+		  upperT = zeros(I,K);
+	  	lowerT = zeros(I,K);
+
+		  % Initialize T & update H
+		  for i = 1:I
+			  for k = 1:K
+
+				  for j = 1:J
+					  vX(:,:,i,k) =  vX(:,:,i,k) + V(k,j) * X(:,:,i,j);
+					  vXf(:,:,i,k) =  vXf(:,:,i,k) + V(k,j) * Xf(:,:,i,j);
+				  end
+				  upperT(i,k) = vec(H(:,:,i,k))'* vec(vX(:,:,i,k));
+				  lowerT(i,k) = vec(H(:,:,i,k))'* vec(vXf(:,:,i,k));
+
+			  end
+		  end	
+
+	    % update T 
+	    tmpT = T.*(upperT./lowerT);
+
+   	    % InitializeV 
+		  upperV = zeros(K,J);
+		  lowerV = zeros(K,J);
+
+		  for j = 1:J
+			  for k = 1:K
+				  for i = 1:I
+					  upperV(k,j) = upperV(k,j) + T(i,k) * vec(H(:,:,i,k))'* vec(X(:,:,i,j));
+					  lowerV(k,j) = lowerV(k,j) + T(i,k) * vec(H(:,:,i,k))'* vec(Xf(:,:,i,j));
+				  end
+			  end
+		  end	 
+
+	  	% update V
+      tmpV = V.*(upperV./lowerV);
+
+		  % H initialozed
+		  % update H(Not  refactored)
+		  for i = 1:I
+			  for k = 1:K
+            vXfi = inv(vXf(:,:,i,k));
+
+	      		tmp = H(:,:,i,k) *  vXfi * vX(:,:,i,k);
+	      		tmp = ( tmp + tmp' ) / 2;
+	      		[P,L] = eig( tmp );
+	      		tmp = real( P * diag( max( diag(L), 0 ) ) * P' );
+	      		tmp = tmp / trace( tmp );
+	      		tmpH(:,:,i,k) = tmp;
+	      
+	    	end
       end
+
       % Update variables
       H = tmpH;
       V = tmpV; 
