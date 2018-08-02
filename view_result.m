@@ -1,7 +1,7 @@
 % plot error wrt time graphs
 % Eu
 figure(1)
-plot( wrt_f(:,1), wrt_i(:,2), '-r');
+plot( wrt_f(:,1), wrt_f(:,2), '-r');
 title('evaluate speed of algorithms on Frb');
 xlabel('Time[s]');
 ylabel('Frb-norm');
