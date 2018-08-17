@@ -20,7 +20,7 @@ You should read the followinig article,
   
  * This default program execute a simulation by real number. 
  
- If you want to deal with real data, change 
+ If you want to deal with real data, you can change 
  codes, for example, "parameter_setting.m", "input_data.m" etc, for your use.
  
   * Size of the observation matrix: 12 × 20
@@ -67,7 +67,7 @@ for ii=1:I
 end
  ```
 
-* Not implement the NMF basis clustering, top-down clustering using the latent variables Z and bottom-up clustering in the reference paper.
+* I do NOT implement the NMF basis clustering and top-down clustering using the latent variables Z and bottom-up clustering in the reference paper.
 
  ## Caution
 
