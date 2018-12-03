@@ -9,8 +9,7 @@ You can execute Multi-channel NMF easily on Octave(of course MATLAB).
 ## Background of Multi-channel NMF
 
 You should read the following article,
-[https://pdfs.semanticscholar.org/783f/44598d5d9df7d534d00943959d9b34dbc302.pdf](https://pdfs.semanticscholar.org/783f/44598d5d9df7d534d00943959d9b34dbc302.pdf)
-
+[http://www.kecl.ntt.co.jp/people/kameoka.hirokazu/publications/Sawada2013IEEETrans05-published.pdf](http://www.kecl.ntt.co.jp/people/kameoka.hirokazu/publications/Sawada2013IEEETrans05-published.pdf)
 (I'm not an author of Multi-channel NMF.)
 
 ## Usage
