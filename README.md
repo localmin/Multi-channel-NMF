@@ -1,6 +1,6 @@
 # Multi-channel Non-negative Matrix Factorization
 
-Multi-channel Non-negative Matrix Factorization by multiplicative update on Octave.
+Multi-channel Non-negative Matrix Factorization by multiplicative update written in Octave.
 
 ## Features
 
